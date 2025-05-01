@@ -3,8 +3,10 @@ package com.jct.renthabesha.ui.screens.components
 import androidx.compose.foundation.clickable
 import androidx.compose.foundation.layout.Column
 import androidx.compose.foundation.layout.Spacer
+import androidx.compose.foundation.layout.fillMaxWidth
 import androidx.compose.foundation.layout.height
 import androidx.compose.foundation.shape.RoundedCornerShape
+import androidx.compose.material3.Icon
 import androidx.compose.material3.MaterialTheme
 import androidx.compose.material3.OutlinedTextField
 import androidx.compose.material3.Text
@@ -14,12 +16,15 @@ import androidx.compose.runtime.getValue
 import androidx.compose.runtime.mutableStateOf
 import androidx.compose.runtime.remember
 import androidx.compose.runtime.setValue
+import androidx.compose.ui.Alignment
 import androidx.compose.ui.Modifier
 import androidx.compose.ui.focus.FocusRequester
 import androidx.compose.ui.focus.focusRequester
+import androidx.compose.ui.res.painterResource
 import androidx.compose.ui.text.input.PasswordVisualTransformation
 import androidx.compose.ui.text.input.VisualTransformation
 import androidx.compose.ui.unit.dp
+import com.jct.renthabesha.R
 import com.jct.renthabesha.ui.theme.focusedTextFieldStroke
 import com.jct.renthabesha.ui.theme.focusedTextFieldText
 import com.jct.renthabesha.ui.theme.unfocusedTextFieldStroke
@@ -35,7 +40,11 @@ fun TextField(
 
     var isShowPassword by remember {
         mutableStateOf(false)
-    };
+    }
+    
+    if (label != "Password"){
+        isShowPassword = true 
+    }
 
     val focusRequester = remember {
         FocusRequester()
@@ -72,16 +81,17 @@ fun TextField(
 
 //            trailingIcon = {
 //                if (label == "Password") {
+//
 //                    Icon(
-//                        painter = if (isShowPassword) painterResource(id = Icons.defaults.) else painterResource(
-//                            id = R.drawable.visibility
-//                        ),
-//                        contentDescription = None,
-//                    )
+//                        modifier = Modifier
+//                            .fillMaxWidth()
+//                            .height(20.dp)
+//                            .align(Alignment.CenterHorizontally),
+//                        painter = painterResource(id = R.drawable.visibility_icon),
+//                        contentDescription = "Location Icon"
+//                    );
+//
 //                }else null
-//                onClick = {
-//                    isShowPassword = !isShowPassword
-//                }
 //            },
 
             singleLine = true,

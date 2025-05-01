@@ -37,37 +37,40 @@ fun CompleteProfileScreen(modifier: Modifier = Modifier) {
     Surface(
         modifier = Modifier.fillMaxSize()
     ) {
-        Column(modifier = Modifier.fillMaxSize()) {
+        Column(
+            modifier = Modifier.fillMaxSize()
+                .padding(horizontal = 30.dp, vertical = 100.dp),
+        ) {
             Text(
-                text = stringResource(id = R.string.sign_in),
+                modifier = Modifier.fillMaxWidth(),
+                text = stringResource(id = R.string.complete_profile),
                 style = MaterialTheme.typography.headlineMedium,
                 textAlign = TextAlign.Center
             )
 
-            Spacer(modifier = Modifier.height(50.dp))
+            Spacer(modifier = Modifier.height(25.dp))
 
             Column(
                 modifier = Modifier.fillMaxSize()
-                    .padding(horizontal = 35.dp)
             ){
 
                 TextField(
                     modifier = Modifier.fillMaxWidth(),
                     textValue = "",
-                    label = stringResource(id = R.string.email),
-                    placeholder = stringResource(id = R.string.email)
+                    label = stringResource(id = R.string.phone_number),
+                    placeholder = stringResource(id = R.string.phone_number)
                 );
 
-                Spacer(modifier = Modifier.width(15.dp));
+                Spacer(modifier = Modifier.height(25.dp));
 
                 TextField(
                     modifier = Modifier.fillMaxWidth(),
                     textValue = "",
-                    label = stringResource(id = R.string.password),
-                    placeholder = stringResource(id = R.string.password)
+                    label = stringResource(id = R.string.gender),
+                    placeholder = stringResource(id = R.string.gender)
                 );
 
-                Spacer(modifier = Modifier.height(15.dp));
+                Spacer(modifier = Modifier.height(25.dp));
 
                 Button(
                     modifier = Modifier
@@ -78,42 +81,10 @@ fun CompleteProfileScreen(modifier: Modifier = Modifier) {
                         containerColor = Brand,
                         contentColor = Color.White
                     ),
-                    shape = RoundedCornerShape(size = 10.dp)
+                    shape = RoundedCornerShape(size = 30.dp)
                 ) {
-                    Text(text = stringResource(id = R.string.sign_in),
+                    Text(text = stringResource(id = R.string.complete_profile_button),
                         style = MaterialTheme.typography.labelMedium.copy(fontWeight = FontWeight.Medium)
-                    )
-                };
-
-                Box(
-                    modifier = Modifier.fillMaxHeight(0.8f)
-                        .fillMaxWidth(),
-                    contentAlignment = Alignment.BottomCenter
-                ){
-                    Text(
-                        text = buildAnnotatedString {
-                            withStyle(
-                                style = SpanStyle(
-                                    color = Color.Black,
-                                    fontStyle = MaterialTheme.typography.bodyLarge.fontStyle,
-                                    fontFamily = Poppins,
-                                    fontSize = MaterialTheme.typography.bodyLarge.fontSize
-                                )
-                            ){
-                                append("Don't have an account? ")
-                            }
-
-                            withStyle(
-                                style = SpanStyle(
-                                    color = TextStrong,
-                                    fontStyle = MaterialTheme.typography.bodyLarge.fontStyle,
-                                    fontFamily = Poppins,
-                                    fontSize = MaterialTheme.typography.bodyLarge.fontSize,
-                                ),
-                            ){
-                                append("Sign Up")
-                            }
-                        }
                     )
                 }
             }

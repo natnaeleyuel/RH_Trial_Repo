@@ -8,7 +8,6 @@ import androidx.compose.foundation.layout.fillMaxSize
 import androidx.compose.foundation.layout.fillMaxWidth
 import androidx.compose.foundation.layout.height
 import androidx.compose.foundation.layout.padding
-import androidx.compose.foundation.layout.width
 import androidx.compose.foundation.shape.RoundedCornerShape
 import androidx.compose.material3.Button
 import androidx.compose.material3.ButtonDefaults
@@ -30,10 +29,11 @@ import com.jct.renthabesha.ui.screens.components.TextField
 import com.jct.renthabesha.R
 import com.jct.renthabesha.ui.theme.Brand
 import com.jct.renthabesha.ui.theme.Poppins
-import com.jct.renthabesha.ui.theme.TextStrong
 
 @Composable
-fun SignupScreen(modifier: Modifier = Modifier) {
+fun SignupScreen(
+    modifier: Modifier = Modifier
+) {
     Surface(
         modifier = Modifier.fillMaxSize()
     ) {
@@ -44,7 +44,7 @@ fun SignupScreen(modifier: Modifier = Modifier) {
 
             Text(
                 modifier = Modifier.fillMaxWidth(),
-                text = stringResource(id = R.string.sign_up),
+                text = stringResource(id = R.string.create_account),
                 style = MaterialTheme.typography.headlineMedium,
                 textAlign = TextAlign.Center
             )

@@ -8,10 +8,10 @@ import androidx.compose.foundation.layout.fillMaxSize
 import androidx.compose.foundation.layout.fillMaxWidth
 import androidx.compose.foundation.layout.height
 import androidx.compose.foundation.layout.padding
-import androidx.compose.foundation.layout.width
 import androidx.compose.foundation.shape.RoundedCornerShape
 import androidx.compose.material3.Button
 import androidx.compose.material3.ButtonDefaults
+import androidx.compose.material3.Icon
 import androidx.compose.material3.MaterialTheme
 import androidx.compose.material3.Surface
 import androidx.compose.material3.Text
@@ -19,6 +19,7 @@ import androidx.compose.runtime.Composable
 import androidx.compose.ui.Alignment
 import androidx.compose.ui.Modifier
 import androidx.compose.ui.graphics.Color
+import androidx.compose.ui.res.painterResource
 import androidx.compose.ui.res.stringResource
 import androidx.compose.ui.text.SpanStyle
 import androidx.compose.ui.text.buildAnnotatedString
@@ -30,44 +31,57 @@ import com.jct.renthabesha.ui.screens.components.TextField
 import com.jct.renthabesha.R
 import com.jct.renthabesha.ui.theme.Brand
 import com.jct.renthabesha.ui.theme.Poppins
-import com.jct.renthabesha.ui.theme.TextStrong
 
 @Composable
 fun AddLocationScreen(modifier: Modifier = Modifier) {
     Surface(
         modifier = Modifier.fillMaxSize()
     ) {
-        Column(modifier = Modifier.fillMaxSize()) {
+        Column(
+            modifier = Modifier.fillMaxSize()
+                .padding(horizontal = 30.dp, vertical = 100.dp),
+        ) {
+
+            Icon(
+                modifier = Modifier
+                    .fillMaxWidth()
+                    .align(Alignment.CenterHorizontally),
+                painter = painterResource(id = R.drawable.location_icon),
+                contentDescription = "Location Icon"
+            );
+
+            Spacer(modifier = Modifier.height(25.dp));
+
             Text(
-                text = stringResource(id = R.string.sign_in),
+                modifier = Modifier.fillMaxWidth(),
+                text = stringResource(id = R.string.your_location_headline),
                 style = MaterialTheme.typography.headlineMedium,
                 textAlign = TextAlign.Center
             )
 
-            Spacer(modifier = Modifier.height(50.dp))
+            Spacer(modifier = Modifier.height(25.dp));
+
+            Text(
+                modifier = Modifier.fillMaxWidth(),
+                text = stringResource(id = R.string.add_location_description),
+                style = MaterialTheme.typography.bodySmall,
+                textAlign = TextAlign.Center
+            )
+
+            Spacer(modifier = Modifier.height(25.dp))
 
             Column(
                 modifier = Modifier.fillMaxSize()
-                    .padding(horizontal = 35.dp)
             ){
 
                 TextField(
                     modifier = Modifier.fillMaxWidth(),
                     textValue = "",
-                    label = stringResource(id = R.string.email),
-                    placeholder = stringResource(id = R.string.email)
+                    label = stringResource(id = R.string.your_location_label),
+                    placeholder = stringResource(id = R.string.location)
                 );
 
-                Spacer(modifier = Modifier.width(15.dp));
-
-                TextField(
-                    modifier = Modifier.fillMaxWidth(),
-                    textValue = "",
-                    label = stringResource(id = R.string.password),
-                    placeholder = stringResource(id = R.string.password)
-                );
-
-                Spacer(modifier = Modifier.height(15.dp));
+                Spacer(modifier = Modifier.height(25.dp));
 
                 Button(
                     modifier = Modifier
@@ -78,42 +92,10 @@ fun AddLocationScreen(modifier: Modifier = Modifier) {
                         containerColor = Brand,
                         contentColor = Color.White
                     ),
-                    shape = RoundedCornerShape(size = 10.dp)
+                    shape = RoundedCornerShape(size = 30.dp)
                 ) {
-                    Text(text = stringResource(id = R.string.sign_in),
+                    Text(text = stringResource(id = R.string.add_location),
                         style = MaterialTheme.typography.labelMedium.copy(fontWeight = FontWeight.Medium)
-                    )
-                };
-
-                Box(
-                    modifier = Modifier.fillMaxHeight(0.8f)
-                        .fillMaxWidth(),
-                    contentAlignment = Alignment.BottomCenter
-                ){
-                    Text(
-                        text = buildAnnotatedString {
-                            withStyle(
-                                style = SpanStyle(
-                                    color = Color.Black,
-                                    fontStyle = MaterialTheme.typography.bodyLarge.fontStyle,
-                                    fontFamily = Poppins,
-                                    fontSize = MaterialTheme.typography.bodyLarge.fontSize
-                                )
-                            ){
-                                append("Don't have an account? ")
-                            }
-
-                            withStyle(
-                                style = SpanStyle(
-                                    color = TextStrong,
-                                    fontStyle = MaterialTheme.typography.bodyLarge.fontStyle,
-                                    fontFamily = Poppins,
-                                    fontSize = MaterialTheme.typography.bodyLarge.fontSize,
-                                ),
-                            ){
-                                append("Sign Up")
-                            }
-                        }
                     )
                 }
             }

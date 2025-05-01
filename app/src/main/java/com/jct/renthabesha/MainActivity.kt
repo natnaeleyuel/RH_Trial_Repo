@@ -14,8 +14,9 @@ class MainActivity : ComponentActivity() {
         enableEdgeToEdge()
         setContent {
             RentHabeshaTheme {
+
 //                LoginScreen()
-                SignupScreen()
+
             }
         }
     }
