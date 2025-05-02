@@ -6,6 +6,7 @@ import androidx.compose.foundation.layout.height
 import androidx.compose.foundation.shape.RoundedCornerShape
 import androidx.compose.material3.AlertDialogDefaults.containerColor
 import androidx.compose.material3.AlertDialogDefaults.shape
+import androidx.compose.material3.Button
 import androidx.compose.material3.ButtonDefaults
 import androidx.compose.material3.MaterialTheme
 import androidx.compose.material3.Surface
@@ -20,26 +21,23 @@ import com.jct.renthabesha.R
 import com.jct.renthabesha.ui.theme.Brand
 
 @Composable
-fun Button(
+fun ButtonCompos(
     modifier: Modifier = Modifier,
-    text: String
+    text: Int
 ) {
-//    Column {
-//        Button(
-//            modifier = Modifier
-//                .fillMaxWidth()
-//                .height(50.dp),
-//            onClick = {}
-//                    colors = ButtonDefaults.buttonColors(
-//                    containerColor = Brand,
-//            contentColor = Color.White
-//        )
-//            shape = RoundedCornerShape(size = 10.dp)
-//        ) {
-//            Text(
-//                text = stringResource(id = R.string.sign_in),
-//                style = MaterialTheme.typography.labelMedium.copy(fontWeight = FontWeight.Medium)
-//            )
-//        }
-//    };
+    Button(
+        modifier = Modifier
+            .fillMaxWidth()
+            .height(50.dp),
+        onClick = { },
+        colors = ButtonDefaults.buttonColors(
+            containerColor = Brand,
+            contentColor = Color.White
+        ),
+        shape = RoundedCornerShape(size = 30.dp)
+    ) {
+        Text(text = stringResource(id = text),
+            style = MaterialTheme.typography.bodyLarge.copy(fontWeight = FontWeight.Medium)
+        )
+    }
 }

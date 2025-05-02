@@ -5,6 +5,7 @@ import androidx.compose.foundation.layout.Column
 import androidx.compose.foundation.layout.Spacer
 import androidx.compose.foundation.layout.fillMaxWidth
 import androidx.compose.foundation.layout.height
+import androidx.compose.foundation.layout.width
 import androidx.compose.foundation.shape.RoundedCornerShape
 import androidx.compose.material3.Icon
 import androidx.compose.material3.MaterialTheme
@@ -46,6 +47,10 @@ fun TextField(
         isShowPassword = true 
     }
 
+    var text by remember {
+        mutableStateOf("")
+    }
+
     val focusRequester = remember {
         FocusRequester()
     };
@@ -63,8 +68,10 @@ fun TextField(
 
         OutlinedTextField(
             modifier = modifier.focusRequester(focusRequester),
-            value = textValue,
-            onValueChange = {},
+            value = text,
+            onValueChange = {
+                text = it
+            },
 
             placeholder = {
                 Text(text = placeholder)
@@ -77,22 +84,21 @@ fun TextField(
                 unfocusedIndicatorColor = MaterialTheme.colorScheme.unfocusedTextFieldStroke
             ),
 
-            shape = RoundedCornerShape(8.dp),
+            shape = RoundedCornerShape(12.dp),
 
-//            trailingIcon = {
-//                if (label == "Password") {
-//
-//                    Icon(
-//                        modifier = Modifier
-//                            .fillMaxWidth()
-//                            .height(20.dp)
-//                            .align(Alignment.CenterHorizontally),
-//                        painter = painterResource(id = R.drawable.visibility_icon),
-//                        contentDescription = "Location Icon"
-//                    );
-//
-//                }else null
-//            },
+            trailingIcon = {
+                if (label == "Password") {
+                    Icon(
+                        modifier = Modifier
+                            .width(20.dp)
+                            .height(20.dp)
+                            .clickable { isShowPassword = !isShowPassword }
+                            .align(Alignment.CenterHorizontally),
+                        painter = painterResource(id = R.drawable.visibility_icon),
+                        contentDescription = null,
+                    );
+                }else null
+            },
 
             singleLine = true,
 

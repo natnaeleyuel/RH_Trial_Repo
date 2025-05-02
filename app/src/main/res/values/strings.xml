@@ -3,12 +3,10 @@
     <string name="sign_in">Sign In</string>
     <string name="email">Email</string>
     <string name="password">Password</string>
-    <string name="sign_up">Sign Up\n</string>
-    <string name="none">Full Name\n</string>
     <string name="complete_profile">Complete Your Profile</string>
-    <string name="phone_number">Phone Number\n</string>
+    <string name="phone_num">Phone Number</string>
     <string name="gender">Gender</string>
-    <string name="complete_profile_button">Complete Profile \n</string>
+    <string name="complete_profile_butn">Complete Profile</string>
     <string name="your_location_headline">What location your are in?</string>
     <string name="your_location_label">Your Location</string>
     <string name="location">Location</string>
@@ -16,4 +14,5 @@
     <string name="add_location_description">We need to know your location in order to suggest nearby services</string>
     <string name="fullname">Full Name</string>
     <string name="create_account">Create Account\n</string>
+    <string name="sign_up">Sign Up</string>
 </resources>

@@ -1,6 +1,7 @@
 package com.jct.renthabesha.ui.screens
 
 import androidx.compose.foundation.gestures.snapping.SnapPosition
+import androidx.compose.foundation.isSystemInDarkTheme
 import androidx.compose.foundation.layout.Arrangement
 import androidx.compose.foundation.layout.Box
 import androidx.compose.foundation.layout.Column
@@ -17,6 +18,7 @@ import androidx.compose.material3.ButtonDefaults
 import androidx.compose.material3.MaterialTheme
 import androidx.compose.material3.Surface
 import androidx.compose.material3.Text
+import androidx.compose.material3.TextFieldDefaults
 import androidx.compose.runtime.Composable
 import androidx.compose.ui.Alignment
 import androidx.compose.ui.Modifier
@@ -27,16 +29,20 @@ import androidx.compose.ui.text.TextStyle
 import androidx.compose.ui.text.buildAnnotatedString
 import androidx.compose.ui.text.font.FontWeight
 import androidx.compose.ui.text.style.TextAlign
+import androidx.compose.ui.text.style.TextDecoration
 import androidx.compose.ui.text.withStyle
 import androidx.compose.ui.unit.dp
 import com.jct.renthabesha.ui.screens.components.TextField
 import com.jct.renthabesha.R
+import com.jct.renthabesha.ui.screens.components.ButtonCompos
 import com.jct.renthabesha.ui.theme.Brand
 import com.jct.renthabesha.ui.theme.Poppins
 import com.jct.renthabesha.ui.theme.TextStrong
 
 @Composable
-fun LoginScreen(modifier: Modifier = Modifier) {
+fun LoginScreen(
+    modifier: Modifier = Modifier
+) {
     Surface(
         modifier = Modifier.fillMaxSize()
     ) {
@@ -51,7 +57,7 @@ fun LoginScreen(modifier: Modifier = Modifier) {
                 textAlign = TextAlign.Center
             )
 
-            Spacer(modifier = Modifier.height(25.dp))
+            Spacer(modifier = Modifier.height(40.dp))
 
             Column(
                 modifier = Modifier.fillMaxSize()
@@ -73,23 +79,12 @@ fun LoginScreen(modifier: Modifier = Modifier) {
                     placeholder = stringResource(id = R.string.password)
                 );
 
-                Spacer(modifier = Modifier.height(25.dp));
+                Spacer(modifier = Modifier.height(40.dp));
 
-                Button(
-                    modifier = Modifier
-                        .fillMaxWidth()
-                        .height(50.dp),
-                    onClick = { },
-                    colors = ButtonDefaults.buttonColors(
-                        containerColor = Brand,
-                        contentColor = Color.White
-                    ),
-                    shape = RoundedCornerShape(size = 30.dp)
-                ) {
-                    Text(text = stringResource(id = R.string.sign_in),
-                        style = MaterialTheme.typography.labelMedium.copy(fontWeight = FontWeight.Medium)
-                    )
-                };
+                ButtonCompos(
+                    modifier = Modifier,
+                    R.string.sign_in
+                )
 
                 Spacer(modifier = Modifier.height(25.dp))
 
@@ -102,7 +97,7 @@ fun LoginScreen(modifier: Modifier = Modifier) {
                         text = buildAnnotatedString {
                             withStyle(
                                 style = SpanStyle(
-                                    color = Color.Black,
+                                    color = if (isSystemInDarkTheme()) Color.White else TextStrong,
                                     fontStyle = MaterialTheme.typography.bodyLarge.fontStyle,
                                     fontFamily = Poppins,
                                     fontSize = MaterialTheme.typography.bodyLarge.fontSize,
@@ -118,8 +113,9 @@ fun LoginScreen(modifier: Modifier = Modifier) {
                                     fontStyle = MaterialTheme.typography.bodyLarge.fontStyle,
                                     fontFamily = Poppins,
                                     fontSize = MaterialTheme.typography.bodyLarge.fontSize,
-                                    fontWeight = MaterialTheme.typography.bodyLarge.fontWeight
-                                ),
+                                    fontWeight = MaterialTheme.typography.bodyLarge.fontWeight,
+                                    textDecoration = TextDecoration.Underline
+                                )
                             ){
                                 append("Sign Up")
                             }

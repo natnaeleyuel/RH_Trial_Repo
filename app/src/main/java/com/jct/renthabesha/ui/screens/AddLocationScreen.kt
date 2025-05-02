@@ -29,11 +29,14 @@ import androidx.compose.ui.text.withStyle
 import androidx.compose.ui.unit.dp
 import com.jct.renthabesha.ui.screens.components.TextField
 import com.jct.renthabesha.R
+import com.jct.renthabesha.ui.screens.components.ButtonCompos
 import com.jct.renthabesha.ui.theme.Brand
 import com.jct.renthabesha.ui.theme.Poppins
 
 @Composable
-fun AddLocationScreen(modifier: Modifier = Modifier) {
+fun AddLocationScreen(
+    modifier: Modifier = Modifier
+) {
     Surface(
         modifier = Modifier.fillMaxSize()
     ) {
@@ -59,7 +62,7 @@ fun AddLocationScreen(modifier: Modifier = Modifier) {
                 textAlign = TextAlign.Center
             )
 
-            Spacer(modifier = Modifier.height(25.dp));
+            Spacer(modifier = Modifier.height(15.dp));
 
             Text(
                 modifier = Modifier.fillMaxWidth(),
@@ -68,7 +71,7 @@ fun AddLocationScreen(modifier: Modifier = Modifier) {
                 textAlign = TextAlign.Center
             )
 
-            Spacer(modifier = Modifier.height(25.dp))
+            Spacer(modifier = Modifier.height(40.dp))
 
             Column(
                 modifier = Modifier.fillMaxSize()
@@ -81,23 +84,12 @@ fun AddLocationScreen(modifier: Modifier = Modifier) {
                     placeholder = stringResource(id = R.string.location)
                 );
 
-                Spacer(modifier = Modifier.height(25.dp));
+                Spacer(modifier = Modifier.height(40.dp));
 
-                Button(
-                    modifier = Modifier
-                        .fillMaxWidth()
-                        .height(50.dp),
-                    onClick = { },
-                    colors = ButtonDefaults.buttonColors(
-                        containerColor = Brand,
-                        contentColor = Color.White
-                    ),
-                    shape = RoundedCornerShape(size = 30.dp)
-                ) {
-                    Text(text = stringResource(id = R.string.add_location),
-                        style = MaterialTheme.typography.labelMedium.copy(fontWeight = FontWeight.Medium)
-                    )
-                }
+                ButtonCompos(
+                    modifier = Modifier,
+                    R.string.add_location
+                )
             }
         }
     }

@@ -28,6 +28,7 @@ import androidx.compose.ui.text.withStyle
 import androidx.compose.ui.unit.dp
 import com.jct.renthabesha.ui.screens.components.TextField
 import com.jct.renthabesha.R
+import com.jct.renthabesha.ui.screens.components.ButtonCompos
 import com.jct.renthabesha.ui.theme.Brand
 import com.jct.renthabesha.ui.theme.Poppins
 import com.jct.renthabesha.ui.theme.TextStrong
@@ -57,8 +58,8 @@ fun CompleteProfileScreen(modifier: Modifier = Modifier) {
                 TextField(
                     modifier = Modifier.fillMaxWidth(),
                     textValue = "",
-                    label = stringResource(id = R.string.phone_number),
-                    placeholder = stringResource(id = R.string.phone_number)
+                    label = stringResource(id = R.string.phone_num),
+                    placeholder = stringResource(id = R.string.phone_num)
                 );
 
                 Spacer(modifier = Modifier.height(25.dp));
@@ -70,23 +71,12 @@ fun CompleteProfileScreen(modifier: Modifier = Modifier) {
                     placeholder = stringResource(id = R.string.gender)
                 );
 
-                Spacer(modifier = Modifier.height(25.dp));
+                Spacer(modifier = Modifier.height(40.dp));
 
-                Button(
-                    modifier = Modifier
-                        .fillMaxWidth()
-                        .height(50.dp),
-                    onClick = { },
-                    colors = ButtonDefaults.buttonColors(
-                        containerColor = Brand,
-                        contentColor = Color.White
-                    ),
-                    shape = RoundedCornerShape(size = 30.dp)
-                ) {
-                    Text(text = stringResource(id = R.string.complete_profile_button),
-                        style = MaterialTheme.typography.labelMedium.copy(fontWeight = FontWeight.Medium)
-                    )
-                }
+                ButtonCompos(
+                    modifier = Modifier,
+                    R.string.complete_profile_butn
+                )
             }
         }
     }

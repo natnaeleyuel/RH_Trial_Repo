@@ -27,3 +27,7 @@ val ColorScheme.focusedTextFieldStroke
 val ColorScheme.unfocusedTextFieldStroke
     @Composable
     get() = if (isSystemInDarkTheme()) Color.Gray else StrokeWeak
+
+val ColorScheme.bodyText
+    @Composable
+    get() = if (isSystemInDarkTheme()) Color.White else TextStrong
