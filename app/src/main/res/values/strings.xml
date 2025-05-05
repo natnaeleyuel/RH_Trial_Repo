@@ -15,4 +15,11 @@
     <string name="fullname">Full Name</string>
     <string name="create_account">Create Account\n</string>
     <string name="sign_up">Sign Up</string>
+    <string name="pw_mang">Password Manager</string>
+    <string name="curr_pass">Current Password</string>
+    <string name="new_pass">New Password</string>
+    <string name="conf_pass">Confirm New Password</string>
+    <string name="hide_pass">**********</string>
+    <string name="change_pass">Change</string>
+    <string name="forg_pass">Forgot Password?</string>
 </resources>
