@@ -39,10 +39,8 @@ import androidx.compose.ui.res.painterResource
 import androidx.compose.ui.res.stringResource
 import androidx.compose.ui.text.font.FontWeight
 import androidx.compose.ui.text.style.TextAlign
-import androidx.compose.ui.tooling.preview.Preview
 import androidx.compose.ui.unit.dp
 import com.jct.renthabesha.R
-import com.jct.renthabesha.ui.theme.RentHabeshaTheme
 
 @OptIn(ExperimentalMaterial3Api::class)
 @Composable

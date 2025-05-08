@@ -219,8 +219,7 @@ fun CheckoutScreen() {
                         .width(299.dp)
                         .height(50.dp),
                     text = R.string.continue_to_payment
-                )
-            }
+                ) }
         }
     }
 }
