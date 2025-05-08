@@ -15,4 +15,7 @@
     <string name="fullname">Full Name</string>
     <string name="create_account">Create Account\n</string>
     <string name="sign_up">Sign Up</string>
+    <string name="continue_to_payment">Continue to payment</string>
+    <string name="Add_clothing">Add</string>
+    <string name="Completed">Completed</string>
 </resources>
